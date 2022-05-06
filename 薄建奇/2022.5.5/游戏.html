@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			var shuzi=0;
+			alert('欢迎你来到猜数字游戏 0~100 简单吧');
+			var xun=true;
+			var ci=0;
+			var dui=0;
+			var duici=0;
+			var huan=true;
+			var	shuzi=parseInt(Math.random()*100) ;
+			console.log(shuzi);
+			while(xun){
+				var a=parseInt(prompt('请输入你猜测的数'));
+				
+				if(a>shuzi){
+					alert('您输入的数字大了');
+					ci=ci+1;
+				}
+				else if(a<shuzi){
+					alert('您输入的数字小了');
+					ci=ci+1;
+				}
+				else if(a==shuzi){
+				var jixu=confirm('你也太厉害了吧 是否继续');
+					dui=dui+1;
+					if(jixu==1){
+						shuzi=parseInt(Math.random()*100) ;
+						console.log(shuzi);
+						xun=true;
+							}
+					else {
+						xun==false;
+						if(dui==1){
+						alert('本次游戏你猜对了一次呦还不错');
+						}
+						else if(dui==2){
+						alert('本次游戏你猜对了两次可以可以');
+						}
+						else if(dui==3){
+						alert('本次游戏你猜对了三次有些厉害了');
+						}
+						else if(dui>3){
+						alert(`本次游戏你猜对了 ${dui} 次聪慧过人`);
+						}
+						break;
+						}
+					}
+				else {
+					 ci=ci+1;
+				 }
+				if(ci>4){
+					
+				var  shifou=confirm('您的机会用完了是否继续？');
+						if(shifou==1){
+							xun=true;
+							alert(`本次数字是 ${shuzi}`);
+							shuzi=parseInt(Math.random()*100) ;	
+							console.log(shuzi);
+							ci=0;
+						}
+						else {
+							xun=false;
+							if(dui==1){
+								alert('本次游戏你猜对了一次呦还不错');
+							}
+						    else if(dui==2){
+								alert('本次游戏你猜对了两次可以可以');
+							}
+							else if(dui==3){
+								alert('本次游戏你猜对了三次有些厉害了');
+							}
+							else if(dui>3){
+								alert(`本次游戏你猜对了 ${dui} 次聪慧过人`);
+							}
+							else {
+								alert('本轮游戏一次没对，惊为天人。')
+							}
+						}
+				}
+			}
+			
+			document.write(shuzi);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
